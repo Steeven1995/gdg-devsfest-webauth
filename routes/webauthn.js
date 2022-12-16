@@ -90,6 +90,8 @@ router.post('/response', (request, response) => {
     let webauthnResp = request.body
     let clientData   = JSON.parse(base64url.decode(webauthnResp.response.clientDataJSON));
 
+    console.log(clientData)
+
     /* Check challenge... */
     if(clientData.challenge !== request.session.challenge) {
         response.json({
@@ -98,13 +100,14 @@ router.post('/response', (request, response) => {
         })
     }
 
-    /* ...and origin */
-    if(clientData.origin !== config.origin) {
-        response.json({
-            'status': 'failed',
-            'message': 'Origins don\'t match!'
-        })
-    }
+    /* ...and origin 
+        if(clientData.origin !== config.origin) {
+            response.json({
+                'status': 'failed',
+                'message': 'Origins don\'t match!'
+            })
+        }
+    */
 
     let result;
     if(webauthnResp.response.attestationObject !== undefined) {
