@@ -47,6 +47,7 @@ let generateServerMakeCredRequest = (username, displayName, id) => {
 
         rp: {
             name: "GDG Libreville",
+            id : "https://webauthn.onrender.com/"
         },
 
         user: {
