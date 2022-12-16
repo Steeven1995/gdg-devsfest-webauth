@@ -12,6 +12,7 @@ let getMakeCredentialsChallenge = (formBody) => {
     .then((response) => response.json())
     .then((response) => {
         if(response.status !== 'ok')
+            console.log(response.message)
             throw new Error(`Server responed with error. The message is: ${response.message}`);
 
         return response
