@@ -47,7 +47,6 @@ let generateServerMakeCredRequest = (username, displayName, id) => {
 
         rp: {
             name: "GDG Libreville",
-            id : "https://webauthn.onrender.com/"
         },
 
         user: {
@@ -57,7 +56,6 @@ let generateServerMakeCredRequest = (username, displayName, id) => {
         },
 
         attestation: 'direct',
-
         pubKeyCredParams: [
             {
                 type: "public-key", alg: -7 // "ES256" IANA COSE Algorithms registry
