@@ -9,7 +9,7 @@ router.post('/register', (request, response) => {
     if(!request.body || !request.body.username || !request.body.name) {
         response.json({
             'status': 'failed',
-            'message': 'Request missing name or username field!'
+            'message': "champ de nom ou de nom d'utilisateur manquant !"
         })
 
         return
@@ -21,7 +21,7 @@ router.post('/register', (request, response) => {
     if(database[username] && database[username].registered) {
         response.json({
             'status': 'failed',
-            'message': `Username ${username} already exists`
+            'message': `Cet utilisateur ${username} existe déja`
         })
 
         return
@@ -49,7 +49,7 @@ router.post('/login', (request, response) => {
     if(!request.body || !request.body.username) {
         response.json({
             'status': 'failed',
-            'message': 'Request missing username field!'
+            'message': 'Veuillez saisir un mot de passe'
         })
 
         return
@@ -60,7 +60,7 @@ router.post('/login', (request, response) => {
     if(!database[username] || !database[username].registered) {
         response.json({
             'status': 'failed',
-            'message': `User ${username} does not exist!`
+            'message': `Cet utilisateur ${username} n'existe pas!`
         })
 
         return
@@ -81,7 +81,7 @@ router.post('/response', (request, response) => {
     || !request.body.type  || request.body.type !== 'public-key' ) {
         response.json({
             'status': 'failed',
-            'message': 'Response missing one or more of id/rawId/response/type fields, or type is not public-key!'
+            'message': "Dans cette reponse , Il manque un ou plusieurs des champs id/rawId/response/type, ou le type n'est pas une clé publique!"
         })
 
         return
@@ -124,7 +124,7 @@ router.post('/response', (request, response) => {
     } else {
         response.json({
             'status': 'failed',
-            'message': 'Can not determine type of response!'
+            'message': 'Impossible de déterminer le type de réponse!'
         })
     }
 
@@ -134,7 +134,7 @@ router.post('/response', (request, response) => {
     } else {
         response.json({
             'status': 'failed',
-            'message': 'Can not authenticate signature!'
+            'message': "Impossible d'authentifier !"
         })
     }
 })

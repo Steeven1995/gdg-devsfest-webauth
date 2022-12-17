@@ -1,9 +1,10 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title></title>
+    <title>Welcomme TO devfest GDG Libreville </title>
     <link rel="stylesheet" href="css/milligram.min.css">
     <style>
+
         html, body, .container, .row {
             height: 100%;
         }
@@ -33,42 +34,42 @@
 
             <div class="column" id="registerContainer">
                 <div class="formcontainer register">
-                    <h3>Register page</h3>
+                    <h3>Inscription</h3>
                     <form id="register">
                       <fieldset>
-                        <label for="name">name</label>
+                        <label for="name">Nom et prenom</label>
                         <input type="text" name="name">
-                        <label for="username">username</label>
+                        <label for="username">Nom d'utilisateur</label>
                         <input type="text" name="username">
-                        <input class="button-primary" type="submit" value="Register">
+                        <input class="button-primary" type="submit" value="S'enregistrer">
                       </fieldset>
                     </form>
 
-                    <a href="#" id="toLogin">Already registered? Login page</a>
+                    <a href="#" id="toLogin">Déjà enregistré? </a>
                 </div>
             </div>
 
             <div class="column" id="loginContainer">
                 <div class="formcontainer login">
-                    <h3>Login page</h3>
+                    <h3>Page de connexion</h3>
                     <form id="login">
                       <fieldset>
-                        <label for="nameField">username</label>
+                        <label for="nameField">Nom d'utilisateur</label>
                         <input type="text" name="username">
-                        <input class="button-primary" type="submit" value="Login">
+                        <input class="button-primary" type="submit" value="connexion">
                       </fieldset>
                     </form>
 
-                    <a href="#" id="toRegistration">Not registered yet? Registration</a>
+                    <a href="#" id="toRegistration">Pas encore de compte</a>
                 </div>
             </div>
 
             <div class="column" id="mainContainer">
 
                 <div class="secretcontainer">
-                    <h3>Hey <span id="name"></span>!</h3>
+                    <h3>Salut <span id="name"></span>!</h3>
                     <div id="theSecret"></div>
-                    <button id="logoutButton">Logout</button>
+                    <button id="logoutButton">Deconnexion</button>
                 </div>
             </div>
 
@@ -79,7 +80,6 @@
     <script src="js/utils.js"></script>
     <script src="js/base64url-arraybuffer.js"></script>
     <script src="js/view.js"></script>
-    <script src="js/password.auth.js"></script>
     <script src="js/webauthn.auth.js"></script>
     <script>
         $(document).ready(() => {
