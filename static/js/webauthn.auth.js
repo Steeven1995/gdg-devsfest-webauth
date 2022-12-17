@@ -12,7 +12,7 @@ let getMakeCredentialsChallenge = (formBody) => {
     .then((response) => response.json())
     .then((response) => {
         if(response.status !== 'ok')
-            throw new Error(`Server responed with error. The message is: ${response.message}`);
+            throw new Error(`EREEUR SERVEUR: ${response.message}`);
 
         return response
     })
@@ -30,7 +30,7 @@ let sendWebAuthnResponse = (body) => {
     .then((response) => response.json())
     .then((response) => {
         if(response.status !== 'ok')
-            throw new Error(`Server responed with error. The message is: ${response.message}`);
+            throw new Error(`eRREUR SERVEUR : ${response.message}`);
 
         return response
     })
@@ -61,7 +61,7 @@ $('#register').submit(function(event) {
             if(response.status === 'ok') {
                 loadMainContainer()   
             } else {
-                alert(`Server responed with error. The message is: ${response.message}`);
+                alert(`eRREUR SERVEUR : ${response.message}`);
             }
         })
         .catch((error) => alert(error))
@@ -79,7 +79,7 @@ let getGetAssertionChallenge = (formBody) => {
     .then((response) => response.json())
     .then((response) => {
         if(response.status !== 'ok')
-            throw new Error(`Server responed with error. The message is: ${response.message}`);
+            throw new Error(`eRREUR SERVEUR : ${response.message}`);
 
         return response
     })
@@ -111,7 +111,7 @@ $('#login').submit(function(event) {
             if(response.status === 'ok') {
                 loadMainContainer()   
             } else {
-                alert(`Server responed with error. The message is: ${response.message}`);
+                alert(`eRREUR SERVEUR : ${response.message}`);
             }
         })
         .catch((error) => alert(error))
